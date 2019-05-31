@@ -1,5 +1,5 @@
 download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/week10_files/growth_data.csv","growth_data.csv") # To download the "growth_data.csv" file
-x = read.table("growth_data.csv", header = TRUE, sep = ",") # To allocate Growth_data.csv file to "a" and to read the file
+x = read.table("growth_data.csv", header = TRUE, sep = ",") # To allocate Growth_data.csv file to "a" and to read the file and to make the first row of the table as column names
 print(x) # To view the outcome 
 str(x) # To identify the the sturcture of the dataset 
 ne = subset(x, Site=="northeast") # Creating a subset of data named “ne” which contains the data of site “northeast”
