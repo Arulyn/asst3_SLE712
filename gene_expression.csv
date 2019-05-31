@@ -1,0 +1,13 @@
+download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/week10_files/gene_expression.tsv","gene expression.tsv") # To download the gene expression.tsv file
+a=read.table("gene expression.tsv", header = TRUE , row.names = 1) # To designate the downloaded file to "a" and read the file by making the first line of the dataset as the column header and the gene accession numbers the rownames
+print(a) # To view the outcome 
+class(a) # To know the type of the data
+a=as.data.frame(a) #  To convert the data into a data frame  
+print(a) # To view the outcome  
+a$MEAN=rowMeans(a) # Inserting a new column named as "MEAN" into "a", the column represents mean value of other columns
+print(a) # To view the outcome
+b = a[order(-a$MEAN),] # To designate desending order of "MEAN" to "b"
+b[1:10,] # To lits the first ten rows in "b"
+subset(a,MEAN<10) # Creating a subset of "a" which has the MEAN less than 10
+dim(subset(a,MEAN<10))# To find out the dimention of the subset of "a" containing MEAN less than 10
+pairs(a) # To create a pairs plot graph from the data "a"
